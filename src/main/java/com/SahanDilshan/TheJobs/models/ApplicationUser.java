@@ -114,4 +114,7 @@ public class ApplicationUser implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public void setUsername(String testUser) {
+    }
 }
