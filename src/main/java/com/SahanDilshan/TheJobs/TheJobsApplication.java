@@ -28,6 +28,7 @@ public class TheJobsApplication {
 
 			Role adminRole = roleRepository.save(new Role("ADMIN"));
 			roleRepository.save(new Role("USER"));
+			roleRepository.save(new Role("CONSULTANT"));
 
 			Set<Role> roles = new HashSet<>();
 			roles.add(adminRole);

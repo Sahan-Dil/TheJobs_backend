@@ -32,14 +32,30 @@ public class AuthenticationService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public ApplicationUser registerUser(String username,String password,String personName, String phone){
+    public ApplicationUser registerUser(String username,String password,String personName, String phone, String roleName){
         String encodedPassword = passwordEncoder.encode(password);
-        Role userRole = roleRepository.findByAuthority("USER").get();
+        Role userRole;
+        if ("CONSULTANT".equals(roleName)) {
+            userRole = roleRepository.findByAuthority("CONSULTANT")
+                    .orElseThrow(() -> new RuntimeException("Consultant role not found"));
+        } else {
+            userRole = roleRepository.findByAuthority("USER")
+                    .orElseThrow(() -> new RuntimeException("User role not found"));
+        }
 
         Set<Role> authorities = new HashSet<>();
         authorities.add(userRole);
         return userRepository.save(new ApplicationUser(0,username,encodedPassword,personName,phone,authorities));
     }
+
+//    public ApplicationUser registerConsultantUser(String username,String password,String personName, String phone){
+//        String encodedPassword = passwordEncoder.encode(password);
+//        Role userRole = roleRepository.findByAuthority("CONSULTANT").get();
+//
+//        Set<Role> authorities = new HashSet<>();
+//        authorities.add(userRole);
+//        return userRepository.save(new ApplicationUser(0,username,encodedPassword,personName,phone,authorities));
+//    }
 
    public LoginResponseDTO loginUser(String username, String password){
         try{
