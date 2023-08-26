@@ -32,13 +32,13 @@ public class AuthenticationService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public ApplicationUser registerUser(String username,String password){
+    public ApplicationUser registerUser(String username,String password,String personName, String phone){
         String encodedPassword = passwordEncoder.encode(password);
         Role userRole = roleRepository.findByAuthority("USER").get();
 
         Set<Role> authorities = new HashSet<>();
         authorities.add(userRole);
-        return userRepository.save(new ApplicationUser(0,username,encodedPassword,authorities));
+        return userRepository.save(new ApplicationUser(0,username,encodedPassword,personName,phone,authorities));
     }
 
    public LoginResponseDTO loginUser(String username, String password){

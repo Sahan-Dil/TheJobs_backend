@@ -20,6 +20,9 @@ public class ApplicationUser implements UserDetails {
     @Column(unique = true)
     private String username;
     private String password;
+    private String personName;
+
+    private String phone;
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_role_junction",
@@ -32,10 +35,12 @@ public class ApplicationUser implements UserDetails {
         this.authorities = new HashSet<Role>();
     }
 
-    public ApplicationUser(Integer userId, String username, String password, Set<Role> authorities) {
+    public ApplicationUser(Integer userId, String username, String password, String personName, String phone, Set<Role> authorities) {
         this.userId = userId;
         this.username = username;
         this.password = password;
+        this.personName = personName;
+        this.phone = phone;
         this.authorities = authorities;
     }
 
@@ -72,6 +77,22 @@ public class ApplicationUser implements UserDetails {
 
     public void setUserName(String username) {
         this.username = username;
+    }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
