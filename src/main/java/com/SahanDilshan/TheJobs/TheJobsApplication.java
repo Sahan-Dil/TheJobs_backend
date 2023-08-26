@@ -32,7 +32,7 @@ public class TheJobsApplication {
 			Set<Role> roles = new HashSet<>();
 			roles.add(adminRole);
 
-			ApplicationUser admin = new ApplicationUser(1, "admin", passwordEncoder.encode("password"), roles);
+			ApplicationUser admin = new ApplicationUser(1, "admin", passwordEncoder.encode("password"),"admin user","0000", roles);
 			userRepository.save(admin);
 		};
 	}
