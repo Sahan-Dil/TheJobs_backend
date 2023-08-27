@@ -8,14 +8,21 @@ import com.SahanDilshan.TheJobs.repository.RoleRepository;
 import com.SahanDilshan.TheJobs.repository.UserRepository;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -25,25 +32,26 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
-@RunWith(MockitoJUnitRunner.class)
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class AuthenticationServiceTest {
 
-    @InjectMocks
+    @Autowired
     private AuthenticationService authenticationService;
 
-    @Mock
+    @MockBean
     private AuthenticationManager authenticationManager;
 
-    @Mock
+    @MockBean
     private TokenService tokenService;
 
-    @Mock
+    @MockBean
     private UserRepository userRepository;
 
-    @Mock
+    @MockBean
     private RoleRepository roleRepository;
 
-    @Mock
+    @MockBean
     private PasswordEncoder passwordEncoder;
 
     @BeforeEach
