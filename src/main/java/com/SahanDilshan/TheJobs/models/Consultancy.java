@@ -16,6 +16,7 @@ public class Consultancy {
     private String description;
     private String phone;
     private String email;
+    private String availability;
     @Column(unique = true)
     private Integer userId;
 
@@ -25,7 +26,7 @@ public class Consultancy {
     public Consultancy() {
     }
 
-    public Consultancy(Integer consultancyId, String name, String country, String gender, String description, String phone, String email, Integer userId) {
+    public Consultancy(Integer consultancyId, String name, String country, String gender, String description, String phone, String email, String availability, Integer userId) {
         this.consultancyId = consultancyId;
         this.name = name;
         this.country = country;
@@ -33,6 +34,7 @@ public class Consultancy {
         this.description = description;
         this.phone = phone;
         this.email = email;
+        this.availability = availability;
         this.userId = userId;
     }
 
@@ -90,6 +92,14 @@ public class Consultancy {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 
     public Integer getUserId() {
