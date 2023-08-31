@@ -15,6 +15,8 @@ public class Consultancy {
     private String gender;
     private String description;
     private String phone;
+
+    @Column(unique = true)
     private String email;
     private String availability;
     @Column(unique = true)
