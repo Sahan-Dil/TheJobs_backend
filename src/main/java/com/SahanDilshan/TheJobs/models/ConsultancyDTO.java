@@ -7,6 +7,7 @@ public class ConsultancyDTO {
     private String description;
     private String phone;
     private String email;
+    private String availability;
     private Integer userId;
 
     // Getters and setters
@@ -58,6 +59,14 @@ public class ConsultancyDTO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
     }
 
     public Integer getUserId() {
