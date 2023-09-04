@@ -27,6 +27,7 @@ public class ConsultancyService {
         consultancy.setGender(consultancyDTO.getGender());
         consultancy.setDescription(consultancyDTO.getDescription());
         consultancy.setPhone(consultancyDTO.getPhone());
+        consultancy.setCategory(consultancyDTO.getCategory());
         consultancy.setEmail(consultancyDTO.getEmail());
         consultancy.setAvailability(consultancyDTO.getAvailability());
         consultancy.setUserId(consultancyDTO.getUserId());
@@ -43,6 +44,7 @@ public class ConsultancyService {
         existingConsultancy.setGender(consultancyDTO.getGender());
         existingConsultancy.setDescription(consultancyDTO.getDescription());
         existingConsultancy.setPhone(consultancyDTO.getPhone());
+        existingConsultancy.setCategory(consultancyDTO.getCategory());
         existingConsultancy.setEmail(consultancyDTO.getEmail());
         existingConsultancy.setAvailability(consultancyDTO.getAvailability());
         existingConsultancy.setUserId(consultancyDTO.getUserId());

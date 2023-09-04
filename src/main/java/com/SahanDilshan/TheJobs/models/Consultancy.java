@@ -15,6 +15,7 @@ public class Consultancy {
     private String gender;
     private String description;
     private String phone;
+    private String category;
 
     @Column(unique = true)
     private String email;
@@ -28,13 +29,14 @@ public class Consultancy {
     public Consultancy() {
     }
 
-    public Consultancy(Integer consultancyId, String name, String country, String gender, String description, String phone, String email, String availability, Integer userId) {
+    public Consultancy(Integer consultancyId, String name, String country, String gender, String description, String phone, String category, String email, String availability, Integer userId) {
         this.consultancyId = consultancyId;
         this.name = name;
         this.country = country;
         this.gender = gender;
         this.description = description;
         this.phone = phone;
+        this.category = category;
         this.email = email;
         this.availability = availability;
         this.userId = userId;
@@ -86,6 +88,14 @@ public class Consultancy {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getEmail() {
