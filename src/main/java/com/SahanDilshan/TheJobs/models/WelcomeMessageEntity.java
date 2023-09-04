@@ -1,6 +1,5 @@
 package com.SahanDilshan.TheJobs.models;
 
-// WelcomeMessageEntity.java
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
