@@ -6,6 +6,7 @@ public class ConsultancyDTO {
     private String gender;
     private String description;
     private String phone;
+    private String category;
     private String email;
     private String availability;
     private Integer userId;
@@ -51,6 +52,14 @@ public class ConsultancyDTO {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getEmail() {
